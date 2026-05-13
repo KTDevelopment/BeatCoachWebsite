@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_title">BeatCoach</string>
+
+    <string name="pages__home__label">Home</string>
+
+    <string name="pages__features__label">Features</string>
+
+    <string name="pages__blog__label">Blog</string>
+
+    <string name="pages__contact__label">Contact</string>
+
+    <string name="pages__privacy__label">Privacy</string>
+
+    <string name="pages__impressum__label">Impressum</string>
+
+
+    <string name="footer__created_label">Created by Kevin Thürmann</string>
+
+
+</resources>
