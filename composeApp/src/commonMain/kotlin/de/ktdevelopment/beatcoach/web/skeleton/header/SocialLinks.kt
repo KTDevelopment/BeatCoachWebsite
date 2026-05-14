@@ -12,6 +12,8 @@ import beatcoachwebsite.composeapp.generated.resources.Res
 import beatcoachwebsite.composeapp.generated.resources.header__android_description
 import beatcoachwebsite.composeapp.generated.resources.header__ios_description
 import beatcoachwebsite.composeapp.generated.resources.header__youtube_description
+import beatcoachwebsite.composeapp.generated.resources.pages__home__android__button__label
+import beatcoachwebsite.composeapp.generated.resources.pages__home__ios__button__label
 import compose.icons.LineAwesomeIcons
 import compose.icons.lineawesomeicons.Android
 import compose.icons.lineawesomeicons.AppStoreIos
@@ -81,24 +83,28 @@ fun SocialLinksMenu() {
 data class SocialLink(
     val icon: ImageVector,
     val description: StringResource,
+    val buttonLabel: StringResource,
     val url: String,
 )
 
 val androidAppLink = SocialLink(
     icon = LineAwesomeIcons.Android,
     description = Res.string.header__android_description,
+    buttonLabel = Res.string.pages__home__android__button__label,
     url = "https://play.google.com/store/apps/details?id=de.ktdevelopment.beatcoach&pcampaignid=web_share"
 )
 
 val iosAppLink = SocialLink(
     icon = LineAwesomeIcons.AppStoreIos,
     description = Res.string.header__ios_description,
+    buttonLabel = Res.string.pages__home__ios__button__label,
     url = "https://apps.apple.com/de/app/beatcoach/id6756516517"
 )
 
 val youtubeLink = SocialLink(
     icon = LineAwesomeIcons.Youtube,
     description = Res.string.header__youtube_description,
+    buttonLabel = Res.string.header__youtube_description,
     url = "https://www.youtube.com/channel/UCYz2jl4Xd6Dl-blrR3Wx9Qg"
 )
 

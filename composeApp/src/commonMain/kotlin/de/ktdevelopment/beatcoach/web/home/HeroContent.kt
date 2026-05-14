@@ -51,25 +51,18 @@ fun HeroContent() {
                 horizontalArrangement = Arrangement.Center,
                 itemVerticalAlignment = Alignment.CenterVertically,
             ) {
-                Button(
-                    modifier = Modifier.cursorHand().padding(16.dp),
-                    onClick = { openInternetUrl(androidAppLink.url) }
-                ) {
-                    Icon(
-                        imageVector = androidAppLink.icon,
-                        contentDescription = stringResource(androidAppLink.description),
-                    )
-                    Text(text = stringResource(Res.string.pages__home__android__button__label))
-                }
-                Button(
-                    modifier = Modifier.cursorHand().padding(16.dp),
-                    onClick = { openInternetUrl(iosAppLink.url) }
-                ) {
-                    Icon(
-                        imageVector = iosAppLink.icon,
-                        contentDescription = stringResource(iosAppLink.description),
-                    )
-                    Text(text = stringResource(Res.string.pages__home__ios__button__label))
+                for (link in listOf(androidAppLink, iosAppLink)) {
+                    Button(
+                        modifier = Modifier.cursorHand().padding(16.dp),
+                        onClick = { openInternetUrl(link.url) }
+                    ) {
+                        Icon(
+                            imageVector = link.icon,
+                            contentDescription = stringResource(link.description),
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(text = stringResource(link.buttonLabel))
+                    }
                 }
             }
         }
@@ -97,45 +90,33 @@ fun HeroContent() {
 }
 
 @Composable
-private fun MainImagePaddingStart(): Dp {
-    val deviceSize = deviceSize()
-    return when (deviceSize) {
-        DeviceSize.Smartphone -> 0.dp
-        DeviceSize.Tablet -> 16.dp
-        DeviceSize.Desktop -> 28.dp
-        DeviceSize.LargeDesktop -> 64.dp
-    }
+private fun MainImagePaddingStart(): Dp = when (deviceSize()) {
+    DeviceSize.Smartphone -> 0.dp
+    DeviceSize.Tablet -> 16.dp
+    DeviceSize.Desktop -> 28.dp
+    DeviceSize.LargeDesktop -> 64.dp
 }
 
 @Composable
-private fun MainImageContainerWidth(): Dp {
-    val deviceSize = deviceSize()
-    return when (deviceSize) {
-        DeviceSize.Smartphone -> 310.dp
-        DeviceSize.Tablet -> 460.dp
-        DeviceSize.Desktop -> 460.dp
-        DeviceSize.LargeDesktop -> 460.dp
-    }
+private fun MainImageContainerWidth(): Dp = when (deviceSize()) {
+    DeviceSize.Smartphone -> 310.dp
+    DeviceSize.Tablet -> 460.dp
+    DeviceSize.Desktop -> 460.dp
+    DeviceSize.LargeDesktop -> 460.dp
 }
 
 @Composable
-private fun MainImageMaxWidth(): Dp {
-    val deviceSize = deviceSize()
-    return when (deviceSize) {
-        DeviceSize.Smartphone -> 500.dp
-        DeviceSize.Tablet -> 700.dp
-        DeviceSize.Desktop -> 700.dp
-        DeviceSize.LargeDesktop -> 700.dp
-    }
+private fun MainImageMaxWidth(): Dp = when (deviceSize()) {
+    DeviceSize.Smartphone -> 500.dp
+    DeviceSize.Tablet -> 700.dp
+    DeviceSize.Desktop -> 700.dp
+    DeviceSize.LargeDesktop -> 700.dp
 }
 
 @Composable
-private fun MainImageOffset(): Offset {
-    val deviceSize = deviceSize()
-    return when (deviceSize) {
-        DeviceSize.Smartphone -> Offset(x = 170f, y = 50f)
-        DeviceSize.Tablet -> Offset(x = 225f, y = 50f)
-        DeviceSize.Desktop -> Offset(x = 225f, y = 50f)
-        DeviceSize.LargeDesktop -> Offset(x = 225f, y = 50f)
-    }
+private fun MainImageOffset(): Offset = when (deviceSize()) {
+    DeviceSize.Smartphone -> Offset(x = 170f, y = 50f)
+    DeviceSize.Tablet -> Offset(x = 225f, y = 50f)
+    DeviceSize.Desktop -> Offset(x = 225f, y = 50f)
+    DeviceSize.LargeDesktop -> Offset(x = 225f, y = 50f)
 }
