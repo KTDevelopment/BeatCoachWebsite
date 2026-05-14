@@ -1,58 +1,52 @@
 package de.ktdevelopment.beatcoach.web.skeleton
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import beatcoachwebsite.composeapp.generated.resources.*
+import de.ktdevelopment.beatcoach.web.LocalNavController
 import de.ktdevelopment.beatcoach.web.theme.DeviceSize
 import de.ktdevelopment.beatcoach.web.theme.cursorHand
 import de.ktdevelopment.beatcoach.web.theme.deviceSize
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun Footer(navController: NavHostController) {
+fun Footer() {
     Card(
-        modifier = Modifier
-            .padding(top = 16.dp)
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
     ) {
         val deviceSize = deviceSize()
         when (deviceSize) {
-            DeviceSize.Smartphone -> SmallFooter(navController)
-            DeviceSize.Tablet, DeviceSize.Desktop, DeviceSize.LargeDesktop -> NormalFooter(navController)
+            DeviceSize.Smartphone -> SmallFooter()
+            DeviceSize.Tablet, DeviceSize.Desktop, DeviceSize.LargeDesktop -> NormalFooter()
         }
     }
 }
 
 @Composable
-private fun SmallFooter(navController: NavHostController) {
+private fun SmallFooter() {
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        FooterLinks(navController)
+        FooterLinks()
         Spacer(modifier = Modifier.height(8.dp))
         CreatorLabel()
     }
 }
 
 @Composable
-private fun NormalFooter(navController: NavHostController) {
+private fun NormalFooter() {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         CreatorLabel()
-        FooterLinks(navController)
+        FooterLinks()
     }
 }
 
@@ -66,9 +60,8 @@ private fun CreatorLabel() {
 }
 
 @Composable
-private fun FooterLinks(
-    navController: NavHostController,
-) {
+private fun FooterLinks() {
+    val navController = LocalNavController.current
     Row {
         val padding = 8.dp
         TextButton(

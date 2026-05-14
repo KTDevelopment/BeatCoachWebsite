@@ -24,5 +24,5 @@
 
     <string name="footer__created_label">Created by Kevin Thürmann</string>
 
-
+    <string name="shared__under_construction__label">under construction</string>
 </resources>

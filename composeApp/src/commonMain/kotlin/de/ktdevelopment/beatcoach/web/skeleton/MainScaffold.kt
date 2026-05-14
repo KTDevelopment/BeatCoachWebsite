@@ -80,9 +80,6 @@ fun MainScaffold(
                         item {
                             content()
                         }
-                        item {
-                            Footer(navController)
-                        }
                     }
                 }
             }

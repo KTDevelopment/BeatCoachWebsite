@@ -1,7 +1,9 @@
 package de.ktdevelopment.beatcoach.web
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.compositionLocalOf
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -17,6 +19,10 @@ import de.ktdevelopment.beatcoach.web.legal.privacy.PrivacyScreen
 import de.ktdevelopment.beatcoach.web.skeleton.AppDestination
 import de.ktdevelopment.beatcoach.web.skeleton.MainScaffold
 
+val LocalNavController =
+    compositionLocalOf<NavHostController> { error("No NavController found!") }
+
+
 @Composable
 fun App(
     onLaunch: suspend (NavHostController) -> Unit,
@@ -27,40 +33,42 @@ fun App(
         onLaunch(navController)
     }
     BeatCoachTheme {
-        MainScaffold(navController) {
-            NavHost(
-                navController = navController,
-                startDestination = Platform.startRoute
-            ) {
-                composable<AppDestination.Home>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#home"))
+        CompositionLocalProvider(LocalNavController provides navController) {
+            MainScaffold(navController) {
+                NavHost(
+                    navController = navController,
+                    startDestination = Platform.startRoute
                 ) {
-                    HomeScreen()
-                }
-                composable<AppDestination.Features>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#features"))
-                ) {
-                    FeaturesScreen()
-                }
-                composable<AppDestination.Blog>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#blog"))
-                ) {
-                    BlogScreen()
-                }
-                composable<AppDestination.Contact>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#contact"))
-                ) {
-                    ContactScreen()
-                }
-                composable<AppDestination.PrivacyPolicy>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#privacy"))
-                ) {
-                    PrivacyScreen()
-                }
-                composable<AppDestination.Impressum>(
-                    deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#impressum"))
-                ) {
-                    ImpressumScreen()
+                    composable<AppDestination.Home>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#home"))
+                    ) {
+                        HomeScreen()
+                    }
+                    composable<AppDestination.Features>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#features"))
+                    ) {
+                        FeaturesScreen()
+                    }
+                    composable<AppDestination.Blog>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#blog"))
+                    ) {
+                        BlogScreen()
+                    }
+                    composable<AppDestination.Contact>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#contact"))
+                    ) {
+                        ContactScreen()
+                    }
+                    composable<AppDestination.PrivacyPolicy>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#privacy"))
+                    ) {
+                        PrivacyScreen()
+                    }
+                    composable<AppDestination.Impressum>(
+                        deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#impressum"))
+                    ) {
+                        ImpressumScreen()
+                    }
                 }
             }
         }
