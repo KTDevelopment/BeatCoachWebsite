@@ -14,6 +14,8 @@ import androidx.navigation.NavHostController
 import compose.icons.LineAwesomeIcons
 import compose.icons.lineawesomeicons.HomeSolid
 import compose.icons.lineawesomeicons.Sellsy
+import de.ktdevelopment.beatcoach.web.theme.DeviceSize
+import de.ktdevelopment.beatcoach.web.theme.deviceSize
 import de.ktdevelopment.beatcoach.web.theme.horizontalPagePadding
 import kotlinx.coroutines.launch
 
@@ -42,6 +44,7 @@ fun MainScaffold(
                 }
             },
             drawerState = drawerState,
+            gesturesEnabled = deviceSize() === DeviceSize.Smartphone,
         ) {
             Scaffold(
                 topBar = {

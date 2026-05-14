@@ -2,6 +2,7 @@ package de.ktdevelopment.beatcoach.web.skeleton
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -18,19 +19,23 @@ import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun Footer(navController: NavHostController) {
-    val deviceSize = deviceSize()
-    when (deviceSize) {
-        DeviceSize.Smartphone -> SmallFooter(navController)
-        DeviceSize.Tablet, DeviceSize.Desktop -> NormalFooter(navController)
+    Card(
+        modifier = Modifier
+            .padding(top = 16.dp)
+            .fillMaxWidth(),
+    ) {
+        val deviceSize = deviceSize()
+        when (deviceSize) {
+            DeviceSize.Smartphone -> SmallFooter(navController)
+            DeviceSize.Tablet, DeviceSize.Desktop, DeviceSize.LargeDesktop -> NormalFooter(navController)
+        }
     }
 }
 
 @Composable
 private fun SmallFooter(navController: NavHostController) {
     Column(
-        modifier = Modifier
-            .padding(top = 16.dp)
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         FooterLinks(navController)
@@ -42,9 +47,7 @@ private fun SmallFooter(navController: NavHostController) {
 @Composable
 private fun NormalFooter(navController: NavHostController) {
     Row(
-        modifier = Modifier
-            .padding(top = 16.dp)
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
@@ -56,6 +59,7 @@ private fun NormalFooter(navController: NavHostController) {
 @Composable
 private fun CreatorLabel() {
     Text(
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
         text = stringResource(Res.string.footer__created_label),
         style = MaterialTheme.typography.bodySmall,
     )

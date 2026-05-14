@@ -42,7 +42,6 @@ fun Header(
     )
     val currentRoute = navController.currentBackStackEntryFlow.collectAsState(null).value?.destination?.route
     val deviceSize = deviceSize()
-
     Row(
         modifier = Modifier
             .padding(start = horizontalPagePadding(), end = horizontalPagePadding(), top = 16.dp, bottom = 16.dp)
@@ -63,8 +62,8 @@ fun Header(
             imageVector = vectorResource(Res.drawable.beatcoach_wortmarke_lila),
             contentDescription = "BeatCoach Logo",
         )
-        if (deviceSize in listOf(DeviceSize.Tablet, DeviceSize.Desktop)) {
-            Spacer(modifier = Modifier.weight(1f))
+        if (deviceSize in listOf(DeviceSize.Tablet, DeviceSize.Desktop, DeviceSize.LargeDesktop)) {
+            Spacer(modifier = Modifier.weight(0.8f))
             ElevatedCard {
                 Row(
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
@@ -104,25 +103,25 @@ fun Header(
     }
 }
 
-private data class SocialLink(
+data class SocialLink(
     val icon: ImageVector,
     val description: StringResource,
     val url: String,
 )
 
-private val androidAppLink = SocialLink(
+val androidAppLink = SocialLink(
     icon = LineAwesomeIcons.Android,
     description = Res.string.header__android_description,
     url = "https://play.google.com/store/apps/details?id=de.ktdevelopment.beatcoach&pcampaignid=web_share"
 )
 
-private val iosAppLink = SocialLink(
+val iosAppLink = SocialLink(
     icon = LineAwesomeIcons.AppStoreIos,
     description = Res.string.header__ios_description,
     url = "https://apps.apple.com/de/app/beatcoach/id6756516517"
 )
 
-private val youtubeLink = SocialLink(
+val youtubeLink = SocialLink(
     icon = LineAwesomeIcons.Youtube,
     description = Res.string.header__youtube_description,
     url = "https://www.youtube.com/channel/UCYz2jl4Xd6Dl-blrR3Wx9Qg"

@@ -6,6 +6,10 @@
     <string name="header__ios_description">iOS</string>
 
     <string name="pages__home__label">Home</string>
+    <string name="pages__home__hero__header">BeatCoach Metronome</string>
+    <string name="pages__home__hero__text">BeatCoach: Flexible song management meets precision metronome, audio support, and seamless export/import. Download today!</string>
+    <string name="pages__home__android__button__label">Android Play Store</string>
+    <string name="pages__home__ios__button__label">iOS App Store</string>
 
     <string name="pages__features__label">Features</string>
 

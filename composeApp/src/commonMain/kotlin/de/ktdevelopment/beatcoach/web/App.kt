@@ -35,9 +35,7 @@ fun App(
                 composable<AppDestination.Home>(
                     deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#home"))
                 ) {
-                    HomeScreen(navigate = {
-                        navController.navigate(AppDestination.Features)
-                    })
+                    HomeScreen()
                 }
                 composable<AppDestination.Features>(
                     deepLinks = listOf(navDeepLink<AppDestination.Home>(basePath = "${Platform.baseUrl}/#features"))
