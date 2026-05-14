@@ -1,5 +1,7 @@
 # Datenschutzerklärung BeatCoach App
 
+Dies ist die Datenschutzerklärung der BeatCoach App, welche über den Google Play Store und den Apple App Store heruntergeladen werden kann.
+
 ### 1. Verantwortlicher
 
 Kevin Thürmann  

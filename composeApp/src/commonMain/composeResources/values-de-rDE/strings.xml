@@ -18,7 +18,7 @@
     <string name="pages__contact__label">Kontakt</string>
     <string name="pages__contact__email_button__label">E-Mail</string>
 
-    <string name="pages__privacy__label">Datenschutz</string>
+    <string name="pages__privacy__label">Datenschutz/Nutzungsbedingungen</string>
 
     <string name="pages__impressum__label">Impressum</string>
     <string name="pages__impressum__title">Impressum BeatCoach</string>
