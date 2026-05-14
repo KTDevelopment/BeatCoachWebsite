@@ -1,4 +1,4 @@
-package de.ktdevelopment.beatcoach.theme
+package de.ktdevelopment.beatcoach.web.theme
 
 import androidx.compose.ui.graphics.Color
 
