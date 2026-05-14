@@ -41,7 +41,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
             implementation(libs.compose.navigation)
-
+            implementation(libs.icons.lineawesome)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

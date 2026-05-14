@@ -15,8 +15,8 @@ enum class DeviceSize {
 fun deviceSize(): DeviceSize {
     val screenWidth = LocalWindowInfo.current.containerSize.width
     return when (screenWidth) {
-        in 0..767 * 2 -> DeviceSize.Smartphone
-        in 768 * 2..1280 * 2 -> DeviceSize.Tablet
+        in 0..792 * 2 -> DeviceSize.Smartphone
+        in 793 * 2..1280 * 2 -> DeviceSize.Tablet
         else -> DeviceSize.Desktop
     }
 }
@@ -24,6 +24,6 @@ fun deviceSize(): DeviceSize {
 @Composable
 fun horizontalPagePadding(): Dp = when (deviceSize()) {
     DeviceSize.Smartphone -> 16.dp
-    DeviceSize.Tablet -> 32.dp * 2
+    DeviceSize.Tablet -> 16.dp * 2
     DeviceSize.Desktop -> 64.dp * 3
 }
