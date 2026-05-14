@@ -58,7 +58,7 @@ fun App(
     var isVisible by remember { mutableStateOf(true) }
 
     LaunchedEffect(Unit) {
-        delay(800.milliseconds)
+        delay(100.milliseconds)
         isVisible = false
     }
 
