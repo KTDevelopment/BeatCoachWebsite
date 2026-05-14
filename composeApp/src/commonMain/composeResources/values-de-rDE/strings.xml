@@ -1,7 +1,9 @@
 <resources>
     <string name="app_title">BeatCoach</string>
 
-    <string name="header__youtube_fallback">Youtube</string>
+    <string name="header__youtube_description">Youtube</string>
+    <string name="header__android_description">Android</string>
+    <string name="header__ios_description">iOS</string>
 
     <string name="pages__home__label">Home</string>
 

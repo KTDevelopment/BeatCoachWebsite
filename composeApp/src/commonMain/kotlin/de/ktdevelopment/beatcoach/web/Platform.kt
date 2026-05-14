@@ -5,4 +5,5 @@ import de.ktdevelopment.beatcoach.web.skeleton.AppDestination
 expect object Platform {
     val baseUrl: String
     val startRoute: AppDestination
+    fun openInternetUrl(url: String)
 }

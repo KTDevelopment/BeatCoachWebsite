@@ -23,4 +23,8 @@ actual object Platform {
                 else -> AppDestination.Home
             }
         }
+
+    actual fun openInternetUrl(url: String) {
+        window.open(url, "_blank")
+    }
 }

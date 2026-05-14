@@ -12,17 +12,20 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import beatcoachwebsite.composeapp.generated.resources.*
 import compose.icons.LineAwesomeIcons
 import compose.icons.lineawesomeicons.*
+import de.ktdevelopment.beatcoach.web.Platform
 import de.ktdevelopment.beatcoach.web.theme.DeviceSize
 import de.ktdevelopment.beatcoach.web.theme.cursorHand
 import de.ktdevelopment.beatcoach.web.theme.deviceSize
 import de.ktdevelopment.beatcoach.web.theme.horizontalPagePadding
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.resources.vectorResource
 
@@ -81,37 +84,49 @@ fun Header(
             }
         }
         Spacer(modifier = Modifier.weight(1f))
-        IconButton(
-            modifier = Modifier.cursorHand(),
-            onClick = { },
-        ) {
-            Icon(
-                imageVector = LineAwesomeIcons.Android,
-                contentDescription = stringResource(Res.string.header__youtube_fallback),
-            )
-        }
-        IconButton(
-            modifier = Modifier.cursorHand(),
-            onClick = { },
-        ) {
-            Icon(
-                imageVector = LineAwesomeIcons.AppStoreIos,
-                contentDescription = stringResource(Res.string.header__youtube_fallback),
-            )
-        }
-        IconButton(
-            modifier = Modifier.cursorHand(),
-            onClick = { },
-        ) {
-            Icon(
-                imageVector = LineAwesomeIcons.Youtube,
-                contentDescription = stringResource(Res.string.header__youtube_fallback),
-            )
+        val socialLinks = listOf(
+            androidAppLink,
+            iosAppLink,
+            youtubeLink,
+        )
+
+        for (link in socialLinks) {
+            IconButton(
+                modifier = Modifier.cursorHand(),
+                onClick = { Platform.openInternetUrl(link.url) },
+            ) {
+                Icon(
+                    imageVector = link.icon,
+                    contentDescription = stringResource(link.description),
+                )
+            }
         }
     }
-
-
 }
+
+private data class SocialLink(
+    val icon: ImageVector,
+    val description: StringResource,
+    val url: String,
+)
+
+private val androidAppLink = SocialLink(
+    icon = LineAwesomeIcons.Android,
+    description = Res.string.header__android_description,
+    url = "https://play.google.com/store/apps/details?id=de.ktdevelopment.beatcoach&pcampaignid=web_share"
+)
+
+private val iosAppLink = SocialLink(
+    icon = LineAwesomeIcons.AppStoreIos,
+    description = Res.string.header__ios_description,
+    url = "https://apps.apple.com/de/app/beatcoach/id6756516517"
+)
+
+private val youtubeLink = SocialLink(
+    icon = LineAwesomeIcons.Youtube,
+    description = Res.string.header__youtube_description,
+    url = "https://www.youtube.com/channel/UCYz2jl4Xd6Dl-blrR3Wx9Qg"
+)
 
 private fun AppDestination.serializer(): KSerializer<out AppDestination> = when (this) {
     AppDestination.Blog -> AppDestination.Blog.serializer()
