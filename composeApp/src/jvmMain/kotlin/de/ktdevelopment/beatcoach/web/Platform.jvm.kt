@@ -18,4 +18,12 @@ actual object Platform {
             }
         }
     }
+
+    actual fun sendEmailTo(recipient: String) {
+        val uriString = "mailto:$recipient"
+
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            Desktop.getDesktop().browse(URI(uriString))
+        }
+    }
 }

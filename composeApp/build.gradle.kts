@@ -42,6 +42,8 @@ kotlin {
 
             implementation(libs.compose.navigation)
             implementation(libs.icons.lineawesome)
+            implementation(libs.markdown.renderer.core)
+            implementation(libs.markdown.renderer.m3)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

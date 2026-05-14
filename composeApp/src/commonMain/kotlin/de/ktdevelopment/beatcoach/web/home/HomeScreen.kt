@@ -25,9 +25,7 @@ import org.jetbrains.compose.resources.stringResource
 @Composable
 fun HomeScreen() {
     PageContainer {
-        Column(
-            modifier = Modifier.padding(top = HomePaddingTop()),
-        ) {
+        Column {
             FlowRow(
                 modifier = Modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.Center,
@@ -97,17 +95,6 @@ fun HomeScreen() {
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun HomePaddingTop(): Dp {
-    val deviceSize = deviceSize()
-    return when (deviceSize) {
-        DeviceSize.Smartphone -> 16.dp
-        DeviceSize.Tablet -> 16.dp
-        DeviceSize.Desktop -> 64.dp
-        DeviceSize.LargeDesktop -> 64.dp
     }
 }
 

@@ -6,4 +6,5 @@ expect object Platform {
     val baseUrl: String
     val startRoute: AppDestination
     fun openInternetUrl(url: String)
+    fun sendEmailTo(recipient: String)
 }

@@ -27,4 +27,8 @@ actual object Platform {
     actual fun openInternetUrl(url: String) {
         window.open(url, "_blank")
     }
+
+    actual fun sendEmailTo(recipient: String) {
+        window.location.href = "mailto:$recipient"
+    }
 }

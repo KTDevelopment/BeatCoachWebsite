@@ -16,11 +16,12 @@
     <string name="pages__blog__label">Blog</string>
 
     <string name="pages__contact__label">Contact</string>
+    <string name="pages__contact__email_button__label">E-Mail</string>
 
     <string name="pages__privacy__label">Privacy</string>
 
-    <string name="pages__impressum__label">Impressum</string>
-
+    <string name="pages__impressum__label">Imprint</string>
+    <string name="pages__impressum__title">Imprint BeatCoach</string>
 
     <string name="footer__created_label">Created by Kevin Thürmann</string>
 
