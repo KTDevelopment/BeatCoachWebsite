@@ -11,9 +11,8 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import androidx.navigation.NavHostController
-import compose.icons.LineAwesomeIcons
-import compose.icons.lineawesomeicons.HomeSolid
-import compose.icons.lineawesomeicons.Sellsy
+import de.ktdevelopment.beatcoach.web.skeleton.header.Header
+import de.ktdevelopment.beatcoach.web.skeleton.header.NavigationDrawerContent
 import de.ktdevelopment.beatcoach.web.theme.DeviceSize
 import de.ktdevelopment.beatcoach.web.theme.deviceSize
 import de.ktdevelopment.beatcoach.web.theme.horizontalPagePadding
@@ -48,7 +47,7 @@ fun MainScaffold(
         ) {
             Scaffold(
                 topBar = {
-                    Header(navController, openMobileDrawer = {
+                    Header(openMobileDrawer = {
                         scope.launch { drawerState.open() }
                     })
                 },
