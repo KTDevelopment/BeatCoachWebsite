@@ -62,7 +62,7 @@ private fun CreatorLabel() {
 @Composable
 private fun FooterLinks() {
     val navController = LocalNavController.current
-    Row {
+    FlowRow {
         val padding = 8.dp
         TextButton(
             modifier = Modifier.cursorHand().padding(horizontal = padding),

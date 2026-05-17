@@ -6,11 +6,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,13 +20,6 @@ import androidx.navigation.navDeepLink
 import beatcoachwebsite.composeapp.generated.resources.Res
 import beatcoachwebsite.composeapp.generated.resources.app_title
 import beatcoachwebsite.composeapp.generated.resources.beatcoach_wortmarke_lila
-import beatcoachwebsite.composeapp.generated.resources.pages__blog__label
-import beatcoachwebsite.composeapp.generated.resources.pages__features__label
-import beatcoachwebsite.composeapp.generated.resources.pages__home__android__button__label
-import beatcoachwebsite.composeapp.generated.resources.pages__home__hero__header
-import beatcoachwebsite.composeapp.generated.resources.pages__home__hero__text
-import beatcoachwebsite.composeapp.generated.resources.pages__home__ios__button__label
-import beatcoachwebsite.composeapp.generated.resources.pages__home__label
 import de.ktdevelopment.beatcoach.web.blog.BlogScreen
 import de.ktdevelopment.beatcoach.web.contact.ContactScreen
 import de.ktdevelopment.beatcoach.web.features.FeaturesScreen
@@ -106,7 +95,6 @@ fun App(
                     }
                 }
             }
-
             AnimatedVisibility(
                 visible = isVisible,
                 enter = fadeIn(),

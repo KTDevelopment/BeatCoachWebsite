@@ -63,21 +63,23 @@ fun MainScaffold(
                     }
                 },
             ) { paddingValues ->
-                Box(
-                    modifier = Modifier.padding(
-                        start = paddingValues.calculateStartPadding(LocalLayoutDirection.current),
-                        top = max(paddingValues.calculateTopPadding(), 50.dp),
-                        end = paddingValues.calculateEndPadding(LocalLayoutDirection.current),
-                        bottom = max(paddingValues.calculateBottomPadding(), 0.dp),
-                    )
-                ) {
-                    LazyColumn(
-                        modifier = Modifier
-                            .padding(start = horizontalPagePadding(), end = horizontalPagePadding())
-                            .fillMaxSize()
+                ResponsiveBackground {
+                    Box(
+                        modifier = Modifier.padding(
+                            start = paddingValues.calculateStartPadding(LocalLayoutDirection.current),
+                            top = max(paddingValues.calculateTopPadding(), 50.dp),
+                            end = paddingValues.calculateEndPadding(LocalLayoutDirection.current),
+                            bottom = max(paddingValues.calculateBottomPadding(), 0.dp),
+                        )
                     ) {
-                        item {
-                            content()
+                        LazyColumn(
+                            modifier = Modifier
+                                .padding(start = horizontalPagePadding(), end = horizontalPagePadding())
+                                .fillMaxSize()
+                        ) {
+                            item {
+                                content()
+                            }
                         }
                     }
                 }
