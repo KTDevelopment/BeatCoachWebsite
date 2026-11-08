@@ -12,6 +12,45 @@
     <string name="pages__home__ios__button__label">iOS App Store</string>
 
     <string name="pages__features__label">Funktionen</string>
+    <string name="pages__features__title">Alles, was du für smarteres Üben brauchst</string>
+    <string name="pages__features__intro">BeatCoach kombiniert ein präzises Metronom, flexibles Song-Management, Audio- und Notenunterstützung sowie fokussierte Übungen – gemacht für Musikerinnen und Musiker, die Struktur in ihre Probe bringen wollen.</string>
+
+    <string name="pages__features__metronome__title">Metronom</string>
+    <string name="pages__features__metronome__bullet_1">Stelle das Tempo (BPM) ein und starte/stoppe ein präzises Metronom mit klarem visuellem Feedback.</string>
+    <string name="pages__features__metronome__bullet_2">Passe Akzente, Unterteilungen (Subdivisions) und Notenauswahl an dein Timing an.</string>
+    <string name="pages__features__metronome__bullet_3">Regle die Lautstärke einzelner Noten/Subdivisions.</string>
+
+    <string name="pages__features__songs__title">Songs &amp; Parts</string>
+    <string name="pages__features__songs__bullet_1">Organisiere Songs und baue sie aus Parts auf: Phrase, Accelerando und Ritardando.</string>
+    <string name="pages__features__songs__bullet_2">Lege BPM, Taktart und Zählzeiten für jeden Part fest.</string>
+    <string name="pages__features__songs__bullet_3">Spiele einzelne Parts oder Part-Gruppen mit Metronom-Wiedergabe ab.</string>
+
+    <string name="pages__features__audio__title">Audio &amp; Wiedergabe</string>
+    <string name="pages__features__audio__bullet_1">Verknüpfe mehrere Audio-Tracks pro Song und wechsle zwischen ihnen.</string>
+    <string name="pages__features__audio__bullet_2">Steuere Wiedergabegeschwindigkeit, Loop und springe direkt zu einem Part.</string>
+    <string name="pages__features__audio__bullet_3">Nutze den Einzähler (Count-In) für die Audio-Wiedergabe, um im Takt zu starten.</string>
+
+    <string name="pages__features__documents__title">Dokumente &amp; Noten</string>
+    <string name="pages__features__documents__bullet_1">Importiere PDF-Dokumente wie Noten, Leadsheets oder Texte.</string>
+    <string name="pages__features__documents__bullet_2">Behalte alles in Ordnern pro Song organisiert.</string>
+    <string name="pages__features__documents__bullet_3">Zeige PDFs in der App an und verschiebe Dateien/Ordner per Drag &amp; Drop.</string>
+
+    <string name="pages__features__exercises__title">Übungen &amp; Fortschritt</string>
+    <string name="pages__features__exercises__bullet_1">Trainiere deine innere Uhr mit Silent-Beat- und Tempo-Change-Übungen.</string>
+    <string name="pages__features__exercises__bullet_2">Wiederhole ganze Songs oder ausgewählte Parts mit Einzähler und Wiederholungsoptionen.</string>
+    <string name="pages__features__exercises__bullet_3">Steigere das Tempo über Part-Wiederholungen und verfolge absolvierte Durchgänge (Passes).</string>
+
+    <string name="pages__features__midi__title">MIDI &amp; Einstellungen</string>
+    <string name="pages__features__midi__bullet_1">Wähle zwischen Audio- und MIDI-Wiedergabe und wähle ein MIDI-Ausgabegerät.</string>
+    <string name="pages__features__midi__bullet_2">Konfiguriere Einzähler- und Tonhöhen-/Pitch-Einstellungen für Metronom und Einzähler.</string>
+    <string name="pages__features__midi__bullet_3">Greife auf Tutorials zu und verwalte deine Abo-Einstellungen.</string>
+
+    <string name="pages__features__importexport__title">Import &amp; Export</string>
+    <string name="pages__features__importexport__bullet_1">Exportiere Songs inklusive Anhängen als .beatcz-Datei.</string>
+    <string name="pages__features__importexport__bullet_2">Importiere Songs auf einem anderen Gerät, um dein Material dabeizuhaben.</string>
+
+    <string name="pages__features__cta__title">Bereit, mit BeatCoach zu üben?</string>
+    <string name="pages__features__cta__text">Lade die App herunter und bring Struktur, Timing und dein gesamtes Song-Material an einen Ort.</string>
 
     <string name="pages__blog__label">Blog</string>
 

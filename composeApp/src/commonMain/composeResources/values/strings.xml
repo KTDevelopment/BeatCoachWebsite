@@ -12,6 +12,45 @@
     <string name="pages__home__ios__button__label">iOS App Store</string>
 
     <string name="pages__features__label">Features</string>
+    <string name="pages__features__title">Everything you need to practice smarter</string>
+    <string name="pages__features__intro">BeatCoach combines a precise metronome, flexible song management, audio and sheet music support, and focused exercises — built for musicians who want structure in their rehearsal.</string>
+
+    <string name="pages__features__metronome__title">Metronome</string>
+    <string name="pages__features__metronome__bullet_1">Set BPM and start/stop a precise metronome with clear visual feedback.</string>
+    <string name="pages__features__metronome__bullet_2">Customize accents, subdivisions, and note selection for your time feel.</string>
+    <string name="pages__features__metronome__bullet_3">Adjust the volume of individual notes/subdivisions.</string>
+
+    <string name="pages__features__songs__title">Songs &amp; Parts</string>
+    <string name="pages__features__songs__bullet_1">Organize songs and build them from parts: Phrase, Accelerando, and Ritardando.</string>
+    <string name="pages__features__songs__bullet_2">Define BPM, time signature, and counts for each part.</string>
+    <string name="pages__features__songs__bullet_3">Play individual parts or part groups with metronome playback.</string>
+
+    <string name="pages__features__audio__title">Audio &amp; Playback</string>
+    <string name="pages__features__audio__bullet_1">Attach multiple audio tracks to a song and switch between them.</string>
+    <string name="pages__features__audio__bullet_2">Control playback speed, looping, and jump directly to a part.</string>
+    <string name="pages__features__audio__bullet_3">Use count-in for audio playback to start in time.</string>
+
+    <string name="pages__features__documents__title">Documents &amp; Sheet Music</string>
+    <string name="pages__features__documents__bullet_1">Import PDF documents such as sheet music, lead sheets, or lyrics.</string>
+    <string name="pages__features__documents__bullet_2">Keep everything organized in folders per song.</string>
+    <string name="pages__features__documents__bullet_3">View PDFs in the app and move files/folders with drag &amp; drop.</string>
+
+    <string name="pages__features__exercises__title">Exercises &amp; Progress</string>
+    <string name="pages__features__exercises__bullet_1">Train your inner clock with Silent Beat and Tempo Change exercises.</string>
+    <string name="pages__features__exercises__bullet_2">Repeat whole songs or selected parts with count-in and repetition options.</string>
+    <string name="pages__features__exercises__bullet_3">Increase BPM across part repetitions and track completed passes.</string>
+
+    <string name="pages__features__midi__title">MIDI &amp; Settings</string>
+    <string name="pages__features__midi__bullet_1">Choose between audio and MIDI playback and select a MIDI output device.</string>
+    <string name="pages__features__midi__bullet_2">Configure count-in and pitch settings for metronome and count-in.</string>
+    <string name="pages__features__midi__bullet_3">Access tutorials and manage your subscription settings.</string>
+
+    <string name="pages__features__importexport__title">Import &amp; Export</string>
+    <string name="pages__features__importexport__bullet_1">Export songs including attachments as a .beatcz file.</string>
+    <string name="pages__features__importexport__bullet_2">Import songs on another device to keep your material with you.</string>
+
+    <string name="pages__features__cta__title">Ready to practice with BeatCoach?</string>
+    <string name="pages__features__cta__text">Download the app and bring structure, timing, and all your song material into one place.</string>
 
     <string name="pages__blog__label">Blog</string>
 
