@@ -7,7 +7,7 @@ Bezug: `#features` (`composeApp/src/commonMain/kotlin/.../web/features/FeaturesS
 - **Mini-FAQ**: 5 faktenbasierte Fragen/Antworten (eigene Audiodateien, PDFs/Noten, Timing-Übungen, MIDI, Übertrag via BeatCoach-Datei `.beatcz`).
 - **„Was macht BeatCoach besonders?“**: 4 Highlight-Kacheln, faktenbasiert.
 - **Interaktive Filter**: Chips *Alle / Organisieren / Üben / Wiedergabe / MIDI & Setup*; filtert Sektionen nach Tags (keine Auswahl = alle).
-- **Aufklappbare Details (Progressive Disclosure)**: „Details anzeigen/ausblenden“ für **Songs & Parts** (Part-Typen, bis 40 Parts/BPM/Takt/Counts) und **Übungen & Fortschritt** (Silent Beat, Tempo Change, Repetitions/Passes).
+- **Feature-Details per Dialog**: Cards vergrößern sich beim Hover (Maus) und öffnen per Klick einen Dialog mit Details; der frühere „Details anzeigen/ausblenden“-Button ist entfernt (keine Höhenänderung im Grid). Detailinhalte weiterhin für **Songs & Parts** und **Übungen & Fortschritt**.
 - **Sekundärer CTA**: „Tutorials ansehen“ (YouTube) zusätzlich zum Store-CTA.
 - **Begriffsklarheit**: `.beatcz` als „BeatCoach-Datei (.beatcz)“ formuliert (DE/EN).
 - **Barrierefreiheit (Basis)**: dekorative Icons mit `contentDescription = null` wo Titel/Label vorhanden; klickbare Elemente mit Text/Label.

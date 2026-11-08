@@ -74,8 +74,7 @@
     <string name="pages__features__highlights__4__text">Arbeite mit Audio oder MIDI, konfiguriere Einzähler und Tonhöhe und passe die App an deinen Probenablauf an.</string>
 
     <string name="pages__features__tutorials__button">Tutorials ansehen</string>
-    <string name="pages__features__details__show">Details anzeigen</string>
-    <string name="pages__features__details__hide">Details ausblenden</string>
+    <string name="pages__features__dialog__close">Schließen</string>
 
     <string name="pages__features__metronome__benefit">Halte ein stabiles Tempo und passe den Click an deine Übungssituation an.</string>
     <string name="pages__features__songs__benefit">Übe schwierige Stellen isoliert, statt den ganzen Song immer wieder von vorn zu starten.</string>

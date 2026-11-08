@@ -74,8 +74,7 @@
     <string name="pages__features__highlights__4__text">Work with audio or MIDI, configure count-in and pitch, and adapt the app to your rehearsal workflow.</string>
 
     <string name="pages__features__tutorials__button">Watch tutorials</string>
-    <string name="pages__features__details__show">Show details</string>
-    <string name="pages__features__details__hide">Hide details</string>
+    <string name="pages__features__dialog__close">Close</string>
 
     <string name="pages__features__metronome__benefit">Keep a steady tempo and shape the click to match how you want to practice.</string>
     <string name="pages__features__songs__benefit">Practice difficult sections separately instead of restarting the whole song every time.</string>
