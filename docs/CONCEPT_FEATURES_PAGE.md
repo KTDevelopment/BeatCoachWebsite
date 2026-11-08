@@ -38,18 +38,19 @@ Material3 (`Card`/`Surface`, `MaterialTheme.typography`), `cursorHand()` für kl
 - **Komponenten (wartbar):**
   - `features/model/FeatureSection.kt` – deklaratives Modell (`icon`, `titleRes`, `bullets`).
   - `features/components/FeatureSectionCard.kt` – Darstellung.
-  - `features/components/FeaturesGrid.kt` – responsives Layout (z. B. `FlowRow` mit Spaltenzahl nach `deviceSize()`).
+  - `features/components/FeaturesGrid.kt` – responsives Layout (z. B. `BoxWithConstraints`/Zeilenaufbau mit Spaltenzahl nach `deviceSize()`).
   - `features/components/FeaturesCta.kt` – Store-CTA.
   - `FeaturesScreen.kt` – komponiert Header, Grid, CTA.
 - **i18n:** Neue `pages__features__*`-Keys in `composeResources/values/strings.xml` und `values-de-rDE/strings.xml`.
-- **Scrolling:** Langer Seiteninhalt muss scrollbar sein. `PageContainer` wird um vertikales Scrollen erweitert (globale, konsistente Lösung), ohne bestehende Seiten zu brechen.
+- **Scrolling:** `PageContainer` bleibt unverändert (`fillMaxSize`/bestehende Struktur). Das Scrollen langer Seiteninhalte funktioniert im bestehenden Seiten-/Scaffold-Setup; kein zusätzlicher Scroll-Modifier im `PageContainer` nötig.
 - **Assets:** Phase 1 ohne neue Screenshots (geringer Wartungsaufwand), Icon-Cards.
 
-## Umsetzungsplan
+## Umsetzungsplan (umgesetzt)
 1. Strings (EN/DE) ergänzen.
-2. `PageContainer` scrollfähig machen.
-3. Modell + Komponenten + `FeaturesScreen` implementieren.
-4. Responsives Verhalten prüfen; Build-Kompatibilität sicherstellen.
+2. Modell + Komponenten + `FeaturesScreen` implementieren.
+3. Responsives Verhalten prüfen; Build-Kompatibilität sicherstellen.
+
+> Hinweis: Ein geplanter Umbau von `PageContainer` für Scrollen war nicht nötig und wurde nicht übernommen.
 
 ## Akzeptanzkriterien
 - `#features` ohne „under construction“, mit strukturierten Sektionen.
