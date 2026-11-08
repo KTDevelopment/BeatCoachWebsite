@@ -26,6 +26,8 @@ import org.jetbrains.compose.resources.stringResource
 fun FeaturesGrid(
     sections: List<FeatureSection>,
     modifier: Modifier = Modifier,
+    cardModifier: (FeatureSection) -> Modifier = { Modifier },
+    headerContent: @Composable () -> Unit = {},
 ) {
     val columns = when (deviceSize()) {
         DeviceSize.Smartphone -> 1
@@ -43,6 +45,8 @@ fun FeaturesGrid(
             style = MaterialTheme.typography.headlineMedium,
             textAlign = TextAlign.Center,
         )
+        Spacer(modifier = Modifier.height(20.dp))
+        headerContent()
         Spacer(modifier = Modifier.height(20.dp))
         BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
             val itemWidth = if (columns == 1) {
@@ -63,7 +67,7 @@ fun FeaturesGrid(
                         rowItems.forEach { section ->
                             FeatureSectionCard(
                                 section = section,
-                                modifier = Modifier.width(itemWidth),
+                                modifier = Modifier.width(itemWidth).then(cardModifier(section)),
                             )
                         }
                     }

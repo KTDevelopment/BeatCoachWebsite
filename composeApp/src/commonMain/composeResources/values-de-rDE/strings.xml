@@ -24,6 +24,8 @@
     <string name="pages__features__songs__bullet_1">Organisiere Songs und baue sie aus Parts auf: Phrase, Accelerando und Ritardando.</string>
     <string name="pages__features__songs__bullet_2">Lege BPM, Taktart und Zählzeiten für jeden Part fest.</string>
     <string name="pages__features__songs__bullet_3">Spiele einzelne Parts oder Part-Gruppen mit Metronom-Wiedergabe ab.</string>
+    <string name="pages__features__songs__detail_1">Part-Typen: Phrase (gleichbleibendes Tempo), Accelerando (allmählich schneller) und Ritardando (allmählich langsamer).</string>
+    <string name="pages__features__songs__detail_2">Jeder Part kann eigenes BPM, eigene Taktart und eigene Zählzeiten haben – mit Unterstützung für bis zu 40 Parts pro Song.</string>
 
     <string name="pages__features__audio__title">Audio &amp; Wiedergabe</string>
     <string name="pages__features__audio__bullet_1">Verknüpfe mehrere Audio-Tracks pro Song und wechsle zwischen ihnen.</string>
@@ -39,6 +41,8 @@
     <string name="pages__features__exercises__bullet_1">Trainiere deine innere Uhr mit Silent-Beat- und Tempo-Change-Übungen.</string>
     <string name="pages__features__exercises__bullet_2">Wiederhole ganze Songs oder ausgewählte Parts mit Einzähler und Wiederholungsoptionen.</string>
     <string name="pages__features__exercises__bullet_3">Steigere das Tempo über Part-Wiederholungen und verfolge absolvierte Durchgänge (Passes).</string>
+    <string name="pages__features__exercises__detail_1">Silent Beat: Das Metronom verstummt nach einem Schlag- oder Zeitmuster. Tempo Change: Das Tempo ändert sich automatisch nach deinem gewählten Muster.</string>
+    <string name="pages__features__exercises__detail_2">Song- und Part-Wiederholung: Wiederhole mit Einzähler und Wiederholungsoptionen; Part-Wiederholungen können das BPM über Durchläufe hinweg verändern.</string>
 
     <string name="pages__features__midi__title">MIDI &amp; Einstellungen</string>
     <string name="pages__features__midi__bullet_1">Wähle zwischen Audio- und MIDI-Wiedergabe und wähle ein MIDI-Ausgabegerät.</string>
@@ -46,20 +50,32 @@
     <string name="pages__features__midi__bullet_3">Greife auf Tutorials zu und verwalte deine Abo-Einstellungen.</string>
 
     <string name="pages__features__importexport__title">Import &amp; Export</string>
-    <string name="pages__features__importexport__bullet_1">Exportiere Songs inklusive Anhängen als .beatcz-Datei.</string>
+    <string name="pages__features__importexport__bullet_1">Exportiere Songs inklusive Anhängen als BeatCoach-Datei (.beatcz).</string>
     <string name="pages__features__importexport__bullet_2">Importiere Songs auf einem anderen Gerät, um dein Material dabeizuhaben.</string>
 
     <string name="pages__features__cta__title">Bereit, mit BeatCoach zu üben?</string>
     <string name="pages__features__cta__text">Lade die App herunter und bring Struktur, Timing und dein gesamtes Song-Material an einen Ort.</string>
 
-    <string name="pages__features__how__title">So funktioniert’s</string>
     <string name="pages__features__sections__title">Was BeatCoach bietet</string>
-    <string name="pages__features__how__step_1__title">1. Song anlegen</string>
-    <string name="pages__features__how__step_1__text">Erstelle einen Song und gliedere ihn in Parts mit BPM, Taktart und Zählzeiten.</string>
-    <string name="pages__features__how__step_2__title">2. Material ergänzen</string>
-    <string name="pages__features__how__step_2__text">Füge Audio-Tracks und PDF-Noten hinzu, damit alles Wichtige an einem Ort liegt.</string>
-    <string name="pages__features__how__step_3__title">3. Fokussiert üben</string>
-    <string name="pages__features__how__step_3__text">Nutze Metronom und gezielte Übungen, um Timing und schwierige Stellen zu trainieren.</string>
+    <string name="pages__features__filter__all">Alle</string>
+    <string name="pages__features__filter__organize">Organisieren</string>
+    <string name="pages__features__filter__practice">Üben</string>
+    <string name="pages__features__filter__playback">Wiedergabe</string>
+    <string name="pages__features__filter__setup">MIDI &amp; Setup</string>
+
+    <string name="pages__features__highlights__title">Was BeatCoach besonders macht</string>
+    <string name="pages__features__highlights__1__title">Üben in Song-Parts</string>
+    <string name="pages__features__highlights__1__text">Gliedere Songs in Parts mit eigenem Tempo und Timing und konzentriere dich auf die Stelle, die Übung braucht.</string>
+    <string name="pages__features__highlights__2__title">Alles in einem Song</string>
+    <string name="pages__features__highlights__2__text">Behalte Audio-Tracks, PDFs und Metronom-Wiedergabe zusammen, damit dein Probenmaterial organisiert bleibt.</string>
+    <string name="pages__features__highlights__3__title">Übungen mit Fortschritt</string>
+    <string name="pages__features__highlights__3__text">Nutze gezielte Timing-Übungen und verfolge absolvierte Durchgänge, um deinen Fortschritt sichtbar zu machen.</string>
+    <string name="pages__features__highlights__4__title">Flexibel für dein Setup</string>
+    <string name="pages__features__highlights__4__text">Arbeite mit Audio oder MIDI, konfiguriere Einzähler und Tonhöhe und passe die App an deinen Probenablauf an.</string>
+
+    <string name="pages__features__tutorials__button">Tutorials ansehen</string>
+    <string name="pages__features__details__show">Details anzeigen</string>
+    <string name="pages__features__details__hide">Details ausblenden</string>
 
     <string name="pages__features__metronome__benefit">Halte ein stabiles Tempo und passe den Click an deine Übungssituation an.</string>
     <string name="pages__features__songs__benefit">Übe schwierige Stellen isoliert, statt den ganzen Song immer wieder von vorn zu starten.</string>
@@ -79,7 +95,7 @@
     <string name="pages__features__faq__4__q">Kann ich MIDI verwenden?</string>
     <string name="pages__features__faq__4__a">Ja. Du kannst in den Einstellungen MIDI-Wiedergabe wählen und ein MIDI-Ausgabegerät auswählen – abhängig von deinem Setup und den App-Optionen.</string>
     <string name="pages__features__faq__5__q">Wie übertrage ich meine Songs auf ein anderes Gerät?</string>
-    <string name="pages__features__faq__5__a">Du kannst Songs inklusive Anhängen als .beatcz-Datei exportieren und auf einem anderen Gerät wieder importieren.</string>
+    <string name="pages__features__faq__5__a">Du kannst Songs inklusive Anhängen als BeatCoach-Datei (.beatcz) exportieren und auf einem anderen Gerät wieder importieren.</string>
 
     <string name="pages__blog__label">Blog</string>
 

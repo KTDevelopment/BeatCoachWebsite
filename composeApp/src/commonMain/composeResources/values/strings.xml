@@ -24,6 +24,8 @@
     <string name="pages__features__songs__bullet_1">Organize songs and build them from parts: Phrase, Accelerando, and Ritardando.</string>
     <string name="pages__features__songs__bullet_2">Define BPM, time signature, and counts for each part.</string>
     <string name="pages__features__songs__bullet_3">Play individual parts or part groups with metronome playback.</string>
+    <string name="pages__features__songs__detail_1">Part types: Phrase (steady tempo), Accelerando (gradually faster), and Ritardando (gradually slower).</string>
+    <string name="pages__features__songs__detail_2">Each part can have its own BPM, time signature, and counts — with support for up to 40 parts per song.</string>
 
     <string name="pages__features__audio__title">Audio &amp; Playback</string>
     <string name="pages__features__audio__bullet_1">Attach multiple audio tracks to a song and switch between them.</string>
@@ -39,6 +41,8 @@
     <string name="pages__features__exercises__bullet_1">Train your inner clock with Silent Beat and Tempo Change exercises.</string>
     <string name="pages__features__exercises__bullet_2">Repeat whole songs or selected parts with count-in and repetition options.</string>
     <string name="pages__features__exercises__bullet_3">Increase BPM across part repetitions and track completed passes.</string>
+    <string name="pages__features__exercises__detail_1">Silent Beat: the metronome mutes by a beat or time pattern. Tempo Change: the tempo changes automatically by your chosen pattern.</string>
+    <string name="pages__features__exercises__detail_2">Song and Part Repetition: repeat with count-in and repetition options; part repetitions can also change BPM across runs.</string>
 
     <string name="pages__features__midi__title">MIDI &amp; Settings</string>
     <string name="pages__features__midi__bullet_1">Choose between audio and MIDI playback and select a MIDI output device.</string>
@@ -46,20 +50,32 @@
     <string name="pages__features__midi__bullet_3">Access tutorials and manage your subscription settings.</string>
 
     <string name="pages__features__importexport__title">Import &amp; Export</string>
-    <string name="pages__features__importexport__bullet_1">Export songs including attachments as a .beatcz file.</string>
+    <string name="pages__features__importexport__bullet_1">Export songs including attachments as a BeatCoach file (.beatcz).</string>
     <string name="pages__features__importexport__bullet_2">Import songs on another device to keep your material with you.</string>
 
     <string name="pages__features__cta__title">Ready to practice with BeatCoach?</string>
     <string name="pages__features__cta__text">Download the app and bring structure, timing, and all your song material into one place.</string>
 
-    <string name="pages__features__how__title">How it works</string>
     <string name="pages__features__sections__title">What BeatCoach offers</string>
-    <string name="pages__features__how__step_1__title">1. Set up your song</string>
-    <string name="pages__features__how__step_1__text">Create a song and structure it into parts with BPM, time signature, and counts.</string>
-    <string name="pages__features__how__step_2__title">2. Add your material</string>
-    <string name="pages__features__how__step_2__text">Attach audio tracks and PDF sheets so everything you need is in one place.</string>
-    <string name="pages__features__how__step_3__title">3. Practice with focus</string>
-    <string name="pages__features__how__step_3__text">Use the metronome and targeted exercises to work on timing and difficult sections.</string>
+    <string name="pages__features__filter__all">All</string>
+    <string name="pages__features__filter__organize">Organize</string>
+    <string name="pages__features__filter__practice">Practice</string>
+    <string name="pages__features__filter__playback">Playback</string>
+    <string name="pages__features__filter__setup">MIDI &amp; Setup</string>
+
+    <string name="pages__features__highlights__title">What makes BeatCoach special</string>
+    <string name="pages__features__highlights__1__title">Practice by song parts</string>
+    <string name="pages__features__highlights__1__text">Structure songs into parts with their own tempo and timing, and focus on the section that needs work.</string>
+    <string name="pages__features__highlights__2__title">Everything in one song</string>
+    <string name="pages__features__highlights__2__text">Keep audio tracks, PDFs, and metronome playback together so your rehearsal material stays organized.</string>
+    <string name="pages__features__highlights__3__title">Exercises with progress</string>
+    <string name="pages__features__highlights__3__text">Use focused timing exercises and track completed passes to see how your practice adds up.</string>
+    <string name="pages__features__highlights__4__title">Flexible to your setup</string>
+    <string name="pages__features__highlights__4__text">Work with audio or MIDI, configure count-in and pitch, and adapt the app to your rehearsal workflow.</string>
+
+    <string name="pages__features__tutorials__button">Watch tutorials</string>
+    <string name="pages__features__details__show">Show details</string>
+    <string name="pages__features__details__hide">Hide details</string>
 
     <string name="pages__features__metronome__benefit">Keep a steady tempo and shape the click to match how you want to practice.</string>
     <string name="pages__features__songs__benefit">Practice difficult sections separately instead of restarting the whole song every time.</string>
@@ -79,7 +95,7 @@
     <string name="pages__features__faq__4__q">Can I use MIDI?</string>
     <string name="pages__features__faq__4__a">Yes. You can choose MIDI playback and select a MIDI output device in the settings, depending on your setup and app options.</string>
     <string name="pages__features__faq__5__q">How can I move my songs to another device?</string>
-    <string name="pages__features__faq__5__a">You can export songs, including attachments, as a .beatcz file and import them on another device.</string>
+    <string name="pages__features__faq__5__a">You can export songs, including attachments, as a BeatCoach file (.beatcz) and import them on another device.</string>
 
     <string name="pages__blog__label">Blog</string>
 

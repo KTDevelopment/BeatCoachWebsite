@@ -1,5 +1,6 @@
 package de.ktdevelopment.beatcoach.web.features.components
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,12 +15,21 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import beatcoachwebsite.composeapp.generated.resources.Res
+import beatcoachwebsite.composeapp.generated.resources.pages__features__details__hide
+import beatcoachwebsite.composeapp.generated.resources.pages__features__details__show
 import de.ktdevelopment.beatcoach.web.features.model.FeatureSection
+import de.ktdevelopment.beatcoach.web.theme.cursorHand
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -27,6 +37,8 @@ fun FeatureSectionCard(
     section: FeatureSection,
     modifier: Modifier = Modifier,
 ) {
+    var expanded by rememberSaveable(section.id) { mutableStateOf(false) }
+
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
@@ -58,25 +70,57 @@ fun FeatureSectionCard(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             section.bullets.forEach { bullet ->
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.Top,
+                BulletRow(text = stringResource(bullet))
+            }
+            if (section.details.isNotEmpty()) {
+                TextButton(
+                    onClick = { expanded = !expanded },
+                    modifier = Modifier.cursorHand(),
                 ) {
                     Text(
-                        text = "•",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.width(16.dp),
-                        textAlign = TextAlign.Center,
+                        text = stringResource(
+                            if (expanded) Res.string.pages__features__details__hide
+                            else Res.string.pages__features__details__show
+                        )
                     )
-                    Text(
-                        text = stringResource(bullet),
-                        style = MaterialTheme.typography.bodyMedium,
-                        modifier = Modifier.weight(1f),
-                    )
+                }
+                AnimatedVisibility(visible = expanded) {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp),
+                    ) {
+                        section.details.forEach { detail ->
+                            BulletRow(
+                                text = stringResource(detail),
+                                muted = true,
+                            )
+                        }
+                    }
                 }
             }
             Spacer(modifier = Modifier.height(4.dp))
         }
+    }
+}
+
+@Composable
+private fun BulletRow(text: String, muted: Boolean = false) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.Top,
+    ) {
+        Text(
+            text = "•",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.width(16.dp),
+            textAlign = TextAlign.Center,
+        )
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium,
+            color = if (muted) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface,
+            modifier = Modifier.weight(1f),
+        )
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,9 +21,11 @@ import androidx.compose.ui.unit.dp
 import beatcoachwebsite.composeapp.generated.resources.Res
 import beatcoachwebsite.composeapp.generated.resources.pages__features__cta__text
 import beatcoachwebsite.composeapp.generated.resources.pages__features__cta__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__tutorials__button
 import de.ktdevelopment.beatcoach.web.Platform.openInternetUrl
 import de.ktdevelopment.beatcoach.web.skeleton.header.androidAppLink
 import de.ktdevelopment.beatcoach.web.skeleton.header.iosAppLink
+import de.ktdevelopment.beatcoach.web.skeleton.header.youtubeLink
 import de.ktdevelopment.beatcoach.web.theme.cursorHand
 import org.jetbrains.compose.resources.stringResource
 
@@ -62,6 +65,18 @@ fun FeaturesCta(modifier: Modifier = Modifier) {
                     Text(text = stringResource(link.buttonLabel))
                 }
             }
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        TextButton(
+            modifier = Modifier.cursorHand(),
+            onClick = { openInternetUrl(youtubeLink.url) },
+        ) {
+            Icon(
+                imageVector = youtubeLink.icon,
+                contentDescription = stringResource(youtubeLink.description),
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(text = stringResource(Res.string.pages__features__tutorials__button))
         }
     }
 }

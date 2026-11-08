@@ -9,6 +9,10 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -28,6 +32,8 @@ import beatcoachwebsite.composeapp.generated.resources.pages__features__exercise
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_3
+import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__detail_1
+import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__detail_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__title
 import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__bullet_1
@@ -48,6 +54,8 @@ import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__b
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_3
+import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__detail_1
+import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__detail_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__title
 import beatcoachwebsite.composeapp.generated.resources.pages__features__title
 import compose.icons.LineAwesomeIcons
@@ -58,17 +66,26 @@ import compose.icons.lineawesomeicons.FileImportSolid
 import compose.icons.lineawesomeicons.FilePdfSolid
 import compose.icons.lineawesomeicons.MusicSolid
 import compose.icons.lineawesomeicons.SyncSolid
+import de.ktdevelopment.beatcoach.web.features.components.FeatureHighlights
 import de.ktdevelopment.beatcoach.web.features.components.FeaturesCta
 import de.ktdevelopment.beatcoach.web.features.components.FeaturesFaq
 import de.ktdevelopment.beatcoach.web.features.components.FeaturesGrid
-import de.ktdevelopment.beatcoach.web.features.components.HowItWorks
+import de.ktdevelopment.beatcoach.web.features.components.FeaturesSectionControls
 import de.ktdevelopment.beatcoach.web.features.model.FeatureSection
+import de.ktdevelopment.beatcoach.web.features.model.FeatureTag
 import de.ktdevelopment.beatcoach.web.skeleton.PageContainer
 import de.ktdevelopment.beatcoach.web.theme.horizontalPagePadding
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun FeaturesScreen() {
+    val sections = featureSections()
+    var selectedTags by remember { mutableStateOf(emptySet<FeatureTag>()) }
+    val filteredSections = remember(sections, selectedTags) {
+        if (selectedTags.isEmpty()) sections
+        else sections.filter { section -> section.tags.any { it in selectedTags } }
+    }
+
     PageContainer {
         Column(
             modifier = Modifier
@@ -91,12 +108,22 @@ fun FeaturesScreen() {
             )
             Spacer(modifier = Modifier.height(40.dp))
 
-            HowItWorks(modifier = Modifier.widthIn(max = 1200.dp))
+            FeatureHighlights(modifier = Modifier.widthIn(max = 1200.dp))
 
             Spacer(modifier = Modifier.height(48.dp))
             FeaturesGrid(
-                sections = featureSections(),
+                sections = filteredSections,
                 modifier = Modifier.widthIn(max = 1200.dp),
+                headerContent = {
+                    FeaturesSectionControls(
+                        selectedTags = selectedTags,
+                        onToggleTag = { tag ->
+                            selectedTags = if (tag in selectedTags) selectedTags - tag else selectedTags + tag
+                        },
+                        onClearTags = { selectedTags = emptySet() },
+                        modifier = Modifier.widthIn(max = 1200.dp),
+                    )
+                },
             )
 
             Spacer(modifier = Modifier.height(48.dp))
@@ -112,6 +139,7 @@ fun FeaturesScreen() {
 @Composable
 private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
+        id = "metronome",
         icon = LineAwesomeIcons.ClockSolid,
         title = Res.string.pages__features__metronome__title,
         benefit = Res.string.pages__features__metronome__benefit,
@@ -120,8 +148,10 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__metronome__bullet_2,
             Res.string.pages__features__metronome__bullet_3,
         ),
+        tags = setOf(FeatureTag.PRACTICE, FeatureTag.PLAYBACK),
     ),
     FeatureSection(
+        id = "songs",
         icon = LineAwesomeIcons.FileAudio,
         title = Res.string.pages__features__songs__title,
         benefit = Res.string.pages__features__songs__benefit,
@@ -130,8 +160,14 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__songs__bullet_2,
             Res.string.pages__features__songs__bullet_3,
         ),
+        details = listOf(
+            Res.string.pages__features__songs__detail_1,
+            Res.string.pages__features__songs__detail_2,
+        ),
+        tags = setOf(FeatureTag.ORGANIZE, FeatureTag.PRACTICE),
     ),
     FeatureSection(
+        id = "audio",
         icon = LineAwesomeIcons.MusicSolid,
         title = Res.string.pages__features__audio__title,
         benefit = Res.string.pages__features__audio__benefit,
@@ -140,8 +176,10 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__audio__bullet_2,
             Res.string.pages__features__audio__bullet_3,
         ),
+        tags = setOf(FeatureTag.PLAYBACK),
     ),
     FeatureSection(
+        id = "documents",
         icon = LineAwesomeIcons.FilePdfSolid,
         title = Res.string.pages__features__documents__title,
         benefit = Res.string.pages__features__documents__benefit,
@@ -150,8 +188,10 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__documents__bullet_2,
             Res.string.pages__features__documents__bullet_3,
         ),
+        tags = setOf(FeatureTag.ORGANIZE),
     ),
     FeatureSection(
+        id = "exercises",
         icon = LineAwesomeIcons.SyncSolid,
         title = Res.string.pages__features__exercises__title,
         benefit = Res.string.pages__features__exercises__benefit,
@@ -160,8 +200,14 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__exercises__bullet_2,
             Res.string.pages__features__exercises__bullet_3,
         ),
+        details = listOf(
+            Res.string.pages__features__exercises__detail_1,
+            Res.string.pages__features__exercises__detail_2,
+        ),
+        tags = setOf(FeatureTag.PRACTICE),
     ),
     FeatureSection(
+        id = "midi",
         icon = LineAwesomeIcons.CogSolid,
         title = Res.string.pages__features__midi__title,
         benefit = Res.string.pages__features__midi__benefit,
@@ -170,8 +216,10 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__midi__bullet_2,
             Res.string.pages__features__midi__bullet_3,
         ),
+        tags = setOf(FeatureTag.SETUP, FeatureTag.PLAYBACK),
     ),
     FeatureSection(
+        id = "importexport",
         icon = LineAwesomeIcons.FileImportSolid,
         title = Res.string.pages__features__importexport__title,
         benefit = Res.string.pages__features__importexport__benefit,
@@ -179,5 +227,6 @@ private fun featureSections(): List<FeatureSection> = listOf(
             Res.string.pages__features__importexport__bullet_1,
             Res.string.pages__features__importexport__bullet_2,
         ),
+        tags = setOf(FeatureTag.ORGANIZE),
     ),
 )

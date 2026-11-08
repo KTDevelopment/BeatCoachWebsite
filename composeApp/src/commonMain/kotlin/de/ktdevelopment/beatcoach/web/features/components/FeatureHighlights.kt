@@ -19,28 +19,33 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import beatcoachwebsite.composeapp.generated.resources.Res
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_1__text
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_1__title
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_2__text
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_2__title
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_3__text
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__step_3__title
-import beatcoachwebsite.composeapp.generated.resources.pages__features__how__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__1__text
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__1__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__2__text
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__2__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__3__text
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__3__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__4__text
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__4__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__highlights__title
+import de.ktdevelopment.beatcoach.web.features.model.FeatureHighlight
 import de.ktdevelopment.beatcoach.web.theme.DeviceSize
 import de.ktdevelopment.beatcoach.web.theme.deviceSize
-import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
-private data class HowStep(val title: StringResource, val text: StringResource)
-
 @Composable
-fun HowItWorks(modifier: Modifier = Modifier) {
-    val steps = listOf(
-        HowStep(Res.string.pages__features__how__step_1__title, Res.string.pages__features__how__step_1__text),
-        HowStep(Res.string.pages__features__how__step_2__title, Res.string.pages__features__how__step_2__text),
-        HowStep(Res.string.pages__features__how__step_3__title, Res.string.pages__features__how__step_3__text),
+fun FeatureHighlights(modifier: Modifier = Modifier) {
+    val highlights = listOf(
+        FeatureHighlight(Res.string.pages__features__highlights__1__title, Res.string.pages__features__highlights__1__text),
+        FeatureHighlight(Res.string.pages__features__highlights__2__title, Res.string.pages__features__highlights__2__text),
+        FeatureHighlight(Res.string.pages__features__highlights__3__title, Res.string.pages__features__highlights__3__text),
+        FeatureHighlight(Res.string.pages__features__highlights__4__title, Res.string.pages__features__highlights__4__text),
     )
-    val columns = if (deviceSize() == DeviceSize.Smartphone) 1 else 3
+    val columns = when (deviceSize()) {
+        DeviceSize.Smartphone -> 1
+        DeviceSize.Tablet -> 2
+        DeviceSize.Desktop, DeviceSize.LargeDesktop -> 4
+    }
     val spacing = 16.dp
 
     Column(
@@ -48,7 +53,7 @@ fun HowItWorks(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = stringResource(Res.string.pages__features__how__title),
+            text = stringResource(Res.string.pages__features__highlights__title),
             style = MaterialTheme.typography.headlineMedium,
             textAlign = TextAlign.Center,
         )
@@ -56,13 +61,13 @@ fun HowItWorks(modifier: Modifier = Modifier) {
         BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
             val itemWidth = if (columns == 1) maxWidth else (maxWidth - spacing * (columns - 1)) / columns
             Column(verticalArrangement = Arrangement.spacedBy(spacing)) {
-                steps.chunked(columns).forEach { rowItems ->
+                highlights.chunked(columns).forEach { rowItems ->
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(spacing),
                     ) {
-                        rowItems.forEach { step ->
-                            HowStepCard(step = step, modifier = Modifier.width(itemWidth))
+                        rowItems.forEach { highlight ->
+                            HighlightCard(highlight = highlight, modifier = Modifier.width(itemWidth))
                         }
                     }
                 }
@@ -72,22 +77,22 @@ fun HowItWorks(modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun HowStepCard(step: HowStep, modifier: Modifier = Modifier) {
+private fun HighlightCard(highlight: FeatureHighlight, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceContainerLow,
+            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f),
         ),
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(20.dp)) {
             Text(
-                text = stringResource(step.title),
+                text = stringResource(highlight.title),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.primary,
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = stringResource(step.text),
+                text = stringResource(highlight.text),
                 style = MaterialTheme.typography.bodyMedium,
             )
         }
