@@ -14,30 +14,37 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import beatcoachwebsite.composeapp.generated.resources.Res
+import beatcoachwebsite.composeapp.generated.resources.pages__features__audio__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__audio__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__audio__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__audio__bullet_3
 import beatcoachwebsite.composeapp.generated.resources.pages__features__audio__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__documents__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__documents__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__documents__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__documents__bullet_3
 import beatcoachwebsite.composeapp.generated.resources.pages__features__documents__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__bullet_3
 import beatcoachwebsite.composeapp.generated.resources.pages__features__exercises__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__importexport__title
 import beatcoachwebsite.composeapp.generated.resources.pages__features__intro
+import beatcoachwebsite.composeapp.generated.resources.pages__features__metronome__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__metronome__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__metronome__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__metronome__bullet_3
 import beatcoachwebsite.composeapp.generated.resources.pages__features__metronome__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__midi__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__midi__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__midi__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__midi__bullet_3
 import beatcoachwebsite.composeapp.generated.resources.pages__features__midi__title
+import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__benefit
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_1
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_2
 import beatcoachwebsite.composeapp.generated.resources.pages__features__songs__bullet_3
@@ -52,7 +59,9 @@ import compose.icons.lineawesomeicons.FilePdfSolid
 import compose.icons.lineawesomeicons.MusicSolid
 import compose.icons.lineawesomeicons.SyncSolid
 import de.ktdevelopment.beatcoach.web.features.components.FeaturesCta
+import de.ktdevelopment.beatcoach.web.features.components.FeaturesFaq
 import de.ktdevelopment.beatcoach.web.features.components.FeaturesGrid
+import de.ktdevelopment.beatcoach.web.features.components.HowItWorks
 import de.ktdevelopment.beatcoach.web.features.model.FeatureSection
 import de.ktdevelopment.beatcoach.web.skeleton.PageContainer
 import de.ktdevelopment.beatcoach.web.theme.horizontalPagePadding
@@ -82,10 +91,16 @@ fun FeaturesScreen() {
             )
             Spacer(modifier = Modifier.height(40.dp))
 
+            HowItWorks(modifier = Modifier.widthIn(max = 1200.dp))
+
+            Spacer(modifier = Modifier.height(48.dp))
             FeaturesGrid(
                 sections = featureSections(),
                 modifier = Modifier.widthIn(max = 1200.dp),
             )
+
+            Spacer(modifier = Modifier.height(48.dp))
+            FeaturesFaq(modifier = Modifier.widthIn(max = 920.dp))
 
             Spacer(modifier = Modifier.height(48.dp))
             FeaturesCta(modifier = Modifier.widthIn(max = 820.dp))
@@ -99,6 +114,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.ClockSolid,
         title = Res.string.pages__features__metronome__title,
+        benefit = Res.string.pages__features__metronome__benefit,
         bullets = listOf(
             Res.string.pages__features__metronome__bullet_1,
             Res.string.pages__features__metronome__bullet_2,
@@ -108,6 +124,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.FileAudio,
         title = Res.string.pages__features__songs__title,
+        benefit = Res.string.pages__features__songs__benefit,
         bullets = listOf(
             Res.string.pages__features__songs__bullet_1,
             Res.string.pages__features__songs__bullet_2,
@@ -117,6 +134,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.MusicSolid,
         title = Res.string.pages__features__audio__title,
+        benefit = Res.string.pages__features__audio__benefit,
         bullets = listOf(
             Res.string.pages__features__audio__bullet_1,
             Res.string.pages__features__audio__bullet_2,
@@ -126,6 +144,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.FilePdfSolid,
         title = Res.string.pages__features__documents__title,
+        benefit = Res.string.pages__features__documents__benefit,
         bullets = listOf(
             Res.string.pages__features__documents__bullet_1,
             Res.string.pages__features__documents__bullet_2,
@@ -135,6 +154,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.SyncSolid,
         title = Res.string.pages__features__exercises__title,
+        benefit = Res.string.pages__features__exercises__benefit,
         bullets = listOf(
             Res.string.pages__features__exercises__bullet_1,
             Res.string.pages__features__exercises__bullet_2,
@@ -144,6 +164,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.CogSolid,
         title = Res.string.pages__features__midi__title,
+        benefit = Res.string.pages__features__midi__benefit,
         bullets = listOf(
             Res.string.pages__features__midi__bullet_1,
             Res.string.pages__features__midi__bullet_2,
@@ -153,6 +174,7 @@ private fun featureSections(): List<FeatureSection> = listOf(
     FeatureSection(
         icon = LineAwesomeIcons.FileImportSolid,
         title = Res.string.pages__features__importexport__title,
+        benefit = Res.string.pages__features__importexport__benefit,
         bullets = listOf(
             Res.string.pages__features__importexport__bullet_1,
             Res.string.pages__features__importexport__bullet_2,

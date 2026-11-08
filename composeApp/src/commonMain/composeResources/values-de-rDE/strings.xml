@@ -52,6 +52,35 @@
     <string name="pages__features__cta__title">Bereit, mit BeatCoach zu üben?</string>
     <string name="pages__features__cta__text">Lade die App herunter und bring Struktur, Timing und dein gesamtes Song-Material an einen Ort.</string>
 
+    <string name="pages__features__how__title">So funktioniert’s</string>
+    <string name="pages__features__sections__title">Was BeatCoach bietet</string>
+    <string name="pages__features__how__step_1__title">1. Song anlegen</string>
+    <string name="pages__features__how__step_1__text">Erstelle einen Song und gliedere ihn in Parts mit BPM, Taktart und Zählzeiten.</string>
+    <string name="pages__features__how__step_2__title">2. Material ergänzen</string>
+    <string name="pages__features__how__step_2__text">Füge Audio-Tracks und PDF-Noten hinzu, damit alles Wichtige an einem Ort liegt.</string>
+    <string name="pages__features__how__step_3__title">3. Fokussiert üben</string>
+    <string name="pages__features__how__step_3__text">Nutze Metronom und gezielte Übungen, um Timing und schwierige Stellen zu trainieren.</string>
+
+    <string name="pages__features__metronome__benefit">Halte ein stabiles Tempo und passe den Click an deine Übungssituation an.</string>
+    <string name="pages__features__songs__benefit">Übe schwierige Stellen isoliert, statt den ganzen Song immer wieder von vorn zu starten.</string>
+    <string name="pages__features__audio__benefit">Probe mit deinen eigenen Backing-Tracks und steige genau an der richtigen Stelle ein.</string>
+    <string name="pages__features__documents__benefit">Behalte Charts und Notizen direkt beim Song und spare Zeit beim Suchen in der Probe.</string>
+    <string name="pages__features__exercises__benefit">Baue verlässliches Timing mit strukturierten Routinen auf und verfolge deine absolvierten Durchgänge.</string>
+    <string name="pages__features__midi__benefit">Passe BeatCoach an dein Setup an – vom einfachen Audio-Click bis zum MIDI-Workflow.</string>
+    <string name="pages__features__importexport__benefit">Übertrage deine Songs auf andere Geräte oder sichere dein Probenmaterial als Backup.</string>
+
+    <string name="pages__features__faq__title">Häufige Fragen</string>
+    <string name="pages__features__faq__1__q">Kann ich eigene Audiodateien nutzen?</string>
+    <string name="pages__features__faq__1__a">Ja. Du kannst mehrere Audio-Tracks pro Song hinzufügen, zwischen ihnen wechseln, die Wiedergabegeschwindigkeit ändern, loopen und zu einem Part springen.</string>
+    <string name="pages__features__faq__2__q">Kann ich Noten oder Texte speichern?</string>
+    <string name="pages__features__faq__2__a">Ja. Du kannst PDF-Dokumente importieren, in Ordnern pro Song organisieren, in der App ansehen und Dateien per Drag &amp; Drop verschieben.</string>
+    <string name="pages__features__faq__3__q">Gibt es Übungen für Timing?</string>
+    <string name="pages__features__faq__3__a">Ja. BeatCoach bietet Silent-Beat- und Tempo-Change-Übungen sowie Song- und Part-Wiederholungen mit Einzähler, Wiederholungsoptionen und Tracking absolvierter Durchgänge.</string>
+    <string name="pages__features__faq__4__q">Kann ich MIDI verwenden?</string>
+    <string name="pages__features__faq__4__a">Ja. Du kannst in den Einstellungen MIDI-Wiedergabe wählen und ein MIDI-Ausgabegerät auswählen – abhängig von deinem Setup und den App-Optionen.</string>
+    <string name="pages__features__faq__5__q">Wie übertrage ich meine Songs auf ein anderes Gerät?</string>
+    <string name="pages__features__faq__5__a">Du kannst Songs inklusive Anhängen als .beatcz-Datei exportieren und auf einem anderen Gerät wieder importieren.</string>
+
     <string name="pages__blog__label">Blog</string>
 
     <string name="pages__contact__label">Kontakt</string>

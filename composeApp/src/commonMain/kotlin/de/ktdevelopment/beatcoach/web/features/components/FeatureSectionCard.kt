@@ -52,6 +52,11 @@ fun FeatureSectionCard(
                     style = MaterialTheme.typography.titleLarge,
                 )
             }
+            Text(
+                text = stringResource(section.benefit),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
             section.bullets.forEach { bullet ->
                 Row(
                     modifier = Modifier.fillMaxWidth(),
